@@ -26,7 +26,7 @@ func countLetters(name string) int {
 }
 
 func compareNames(prevName, newName *[]byte) {
-	println("Leader: ", string(*prevName), ", New Name: ", string(*newName))
+	//println("Leader: ", string(*prevName), ", New Name: ", string(*newName))
 
 	curNameLetterNum := countLetters(string(*newName))
 	currentLeaderLetterNum := countLetters(string(*prevName))
@@ -86,7 +86,7 @@ func main() {
 			compareNames(&currentLeader, &curName)
 		}
 		// Print the case result
-		fmt.Println("Case #", i+1, ": ", string(currentLeader))
+		fmt.Printf("Case #%d: %s\n", i+1, string(currentLeader))
 
 	}
 }
