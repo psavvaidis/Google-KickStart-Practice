@@ -25,13 +25,6 @@ func countLetters(name string) int {
 	return len(lettersFound)
 }
 
-func Max(x, y int) int {
-	if x < y {
-		return y
-	}
-	return x
-}
-
 func compareNames(prevName, newName *[]byte) {
 	println("Leader: ", string(*prevName), ", New Name: ", string(*newName))
 
@@ -67,7 +60,7 @@ func main() {
 	check(err)
 
 	for i := 0; i < casesNum; i++ {
-		currentLeader := []byte{}
+		var currentLeader []byte
 
 		// Read Number of Inputs for this case
 		inputs, _, err := reader.ReadLine()
@@ -80,7 +73,7 @@ func main() {
 			curName, _, err := reader.ReadLine()
 			check(err)
 
-			// Check conditions for name to be a leader
+			// Check conditions for a name to be a leader
 			compareNames(&currentLeader, &curName)
 		}
 		// Print the case result
