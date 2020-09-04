@@ -58,6 +58,10 @@ func main() {
 	check(err)
 	casesNum, err := strconv.Atoi(string(cases))
 	check(err)
+	if casesNum < 1 || casesNum > 100 {
+		println("cases are at least 1 and at most 100")
+		return
+	}
 
 	for i := 0; i < casesNum; i++ {
 		var currentLeader []byte
@@ -67,6 +71,11 @@ func main() {
 		check(err)
 		inputsNum, err := strconv.Atoi(string(inputs))
 		check(err)
+
+		if inputsNum < 1 || inputsNum > 100 {
+			println("Case Inputs are at least 1 and at most 100")
+			continue
+		}
 
 		for j := 0; j < inputsNum; j++ {
 			// Read Input Name
